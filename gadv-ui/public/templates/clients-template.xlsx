@@ -1,0 +1,6 @@
+# This is a placeholder. In a real scenario, you would create an actual Excel file.
+# For now, use the column headers below to create your Excel file manually.
+
+# Column Headers for Clients Excel Template:
+# type_client, nom_complet, nom_entreprise, numero_mobile, numero_mobile_2, email, date_naissance, numero_passeport, expiration_passeport, rc, nif, ai, nis, notes, prefere_facturation
+

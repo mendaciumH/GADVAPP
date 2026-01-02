@@ -1,0 +1,331 @@
+/* RTL Support Styles */
+
+/* General RTL styles */
+body.rtl {
+  font-family: 'Noto Sans Arabic', 'Segoe UI', system-ui, sans-serif;
+}
+
+body.ltr {
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+}
+
+/* Navbar RTL specific styles */
+.rtl nav {
+  direction: rtl;
+  width: 100%;
+}
+
+.rtl nav .max-w-7xl {
+  width: 100%;
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rtl nav .flex {
+  direction: rtl;
+}
+
+.rtl nav .justify-between {
+  justify-content: space-between;
+}
+
+.rtl nav .justify-center {
+  justify-content: center;
+}
+
+/* Ensure navbar spans full width in RTL */
+.rtl nav.fixed {
+  width: 100vw;
+  left: 0;
+  right: 0;
+}
+
+/* Arabic font improvements */
+.rtl h1, .rtl h2, .rtl h3, .rtl h4, .rtl h5, .rtl h6 {
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.rtl p, .rtl span, .rtl div {
+  line-height: 1.6;
+}
+
+/* Better spacing for Arabic text */
+.rtl .space-x-2 > * + * {
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
+
+.rtl .space-x-3 > * + * {
+  margin-left: 0;
+  margin-right: 0.75rem;
+}
+
+.rtl .space-x-4 > * + * {
+  margin-left: 0;
+  margin-right: 1rem;
+}
+
+/* RTL-specific positioning */
+.rtl .mr-4 {
+  margin-right: 0;
+  margin-left: 1rem;
+}
+
+.rtl .ml-4 {
+  margin-left: 0;
+  margin-right: 1rem;
+}
+
+/* Enhanced input and form RTL support */
+.rtl input[type="text"],
+.rtl input[type="email"],
+.rtl input[type="password"],
+.rtl select,
+.rtl textarea {
+  text-align: right;
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+}
+
+/* Button RTL improvements */
+.rtl button {
+  font-weight: 500;
+}
+
+/* Motion and animation adjustments for RTL */
+.rtl .motion-element {
+  transform-origin: right center;
+}
+
+/* Navigation RTL styles */
+.rtl .nav-item {
+  margin-left: 0;
+  margin-right: 1rem;
+}
+
+/* Better contrast for Arabic text */
+.rtl .text-brand-dark {
+  color: #1a1a1a !important;
+}
+
+.rtl .text-brand-dark\/70 {
+  color: rgba(26, 26, 26, 0.8) !important;
+}
+
+/* Grid layout improvements for RTL */
+.rtl .grid {
+  direction: rtl;
+}
+
+.rtl .flex {
+  direction: rtl;
+}
+
+/* Search bar RTL enhancements */
+.rtl .search-input::placeholder {
+  text-align: right;
+  opacity: 0.7;
+}
+
+/* Pricing card RTL improvements */
+.rtl .pricing-card {
+  text-align: right;
+}
+
+/* Statistics section RTL */
+.rtl .stats-grid .stat-item {
+  text-align: right;
+}
+
+/* Property cards RTL - Fix for flipping issue */
+.rtl .properties-grid {
+  direction: rtl;
+}
+
+.rtl .rtl-safe-card {
+  transform-origin: center center;
+  direction: ltr; /* Keep card content LTR to prevent flipping */
+}
+
+.rtl .rtl-safe-card:hover {
+  transform: translateY(-4px) !important;
+  /* Remove any horizontal transforms that cause flipping */
+}
+
+.rtl .property-image {
+  transform-origin: center center;
+}
+
+.rtl .property-image:hover {
+  transform: scale(1.1) !important;
+  /* Ensure only scale transform, no flipping */
+}
+
+/* Fix for property card content alignment in RTL */
+.rtl .rtl-safe-card .p-4 {
+  text-align: right;
+  direction: rtl;
+}
+
+.rtl .rtl-safe-card h3 {
+  text-align: right;
+}
+
+.rtl .rtl-safe-card .flex {
+  direction: rtl;
+}
+
+.rtl .rtl-safe-card .space-x-2 > * + * {
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
+
+/* Fix for icons and text alignment in RTL property cards */
+.rtl .rtl-safe-card svg {
+  margin-left: 0.25rem;
+  margin-right: 0;
+}
+
+.rtl .rtl-safe-card .mr-1 {
+  margin-right: 0;
+  margin-left: 0.25rem;
+}
+
+/* Ensure buttons maintain proper spacing in RTL */
+.rtl .rtl-safe-card .flex.space-x-2 {
+  direction: ltr; /* Keep button layout LTR */
+  justify-content: flex-end;
+}
+
+/* RTL-safe hover effects for property cards */
+[dir="rtl"] .property-card-hover {
+  transition: all 0.3s ease;
+}
+
+[dir="rtl"] .property-card-hover:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Ensure images don't flip in property cards */
+[dir="rtl"] .property-image {
+  transform: none !important;
+}
+
+[dir="rtl"] .property-image:hover {
+  transform: scale(1.1) !important;
+}
+
+/* RTL-safe transform utilities for cards */
+.rtl-safe-card {
+  transition: all 0.3s ease;
+}
+
+.rtl-safe-card:hover {
+  transform: translateY(-0.25rem);
+}
+
+/* Fix for grid layout in RTL */
+[dir="rtl"] .properties-grid {
+  direction: ltr; /* Keep grid layout LTR for proper alignment */
+}
+
+[dir="rtl"] .properties-grid > * {
+  direction: rtl; /* But keep individual cards RTL */
+}
+
+/* Language toggle specific styles */
+.language-toggle {
+  transition: all 0.3s ease;
+}
+
+.language-toggle:hover {
+  transform: scale(1.05);
+}
+
+/* Animation adjustments for RTL */
+@media (prefers-reduced-motion: no-preference) {
+  .rtl .motion-element {
+    animation-direction: reverse;
+  }
+}
+
+/* Responsive RTL adjustments */
+@media (max-width: 768px) {
+  .rtl .sm\:flex-row-reverse {
+    flex-direction: column-reverse;
+  }
+  
+  /* Mobile navbar RTL fixes */
+  .rtl nav .md\:hidden {
+    width: 100%;
+  }
+  
+  .rtl nav .md\:hidden .py-4 {
+    width: 100%;
+  }
+}
+
+/* Enhanced focus states for RTL */
+.rtl input:focus,
+.rtl select:focus,
+.rtl button:focus {
+  outline-offset: 2px;
+  outline: 2px solid #f97316;
+}
+
+/* Better shadow positioning for RTL */
+.rtl .shadow-lg {
+  box-shadow: -0.625rem 0.625rem 1.875rem -0.3125rem rgba(0, 0, 0, 0.1), 
+              -0.25rem 0.25rem 0.625rem -0.25rem rgba(0, 0, 0, 0.06);
+}
+
+/* Parallax and motion adjustments */
+.rtl .parallax-container {
+  transform-origin: left center;
+}
+
+/* Feature cards RTL positioning */
+.rtl .feature-card {
+  text-align: right;
+}
+
+.rtl .feature-icon {
+  margin-left: 1rem;
+  margin-right: 0;
+}
+
+/* RTL-safe property cards - prevents flipping on hover */
+.rtl-safe-card {
+  transform-origin: center center !important;
+}
+
+.rtl-safe-card:hover {
+  transform: translateY(-4px) !important;
+}
+
+/* Property image scaling - only scale, no flip */
+.property-image {
+  transform-origin: center center !important;
+}
+
+.rtl .property-image:hover {
+  transform: scale(1.1) !important;
+}
+
+/* Properties grid RTL layout */
+.rtl .properties-grid {
+  direction: rtl;
+}
+
+.rtl .properties-grid .rtl-safe-card {
+  direction: ltr;
+  text-align: left;
+}
+
+.rtl .properties-grid .rtl-safe-card .p-4 {
+  text-align: right;
+  direction: rtl;
+}

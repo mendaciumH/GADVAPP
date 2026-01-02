@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* IBM Carbon Design System - B2B Travel Management Theme */
+@layer base {
+  :root {
+    /* Light Theme (Default) */
+    --color-primary: #0F62FE;
+    --color-primary-dark: #002D9C;
+    --color-primary-light: #4589FF;
+    --color-primary-hover: #0050E6;
+    
+    --color-secondary: #08BDBA;
+    --color-secondary-dark: #005D5D;
+    --color-secondary-light: #20D5D2;
+    
+    --color-accent: #FF7EB6;
+    --color-accent-dark: #FF50A0;
+    --color-accent-light: #FFA6C9;
+    
+    --color-background: #F4F4F4;
+    --color-surface: #FFFFFF;
+    --color-border: #E0E0E0;
+    
+    --color-text-primary: #161616;
+    --color-text-secondary: #525252;
+    --color-text-disabled: #A8A8A8;
+    
+    --color-success: #24A148;
+    --color-warning: #F1C21B;
+    --color-error: #DA1E28;
+    --color-info: #4589FF;
+    
+    /* Spacing - Carbon 8px grid */
+    --spacing-xs: 0.25rem;   /* 4px */
+    --spacing-sm: 0.5rem;   /* 8px */
+    --spacing-md: 1rem;      /* 16px */
+    --spacing-lg: 1.5rem;    /* 24px */
+    --spacing-xl: 2rem;      /* 32px */
+    --spacing-2xl: 3rem;     /* 48px */
+  }
+  
+  [data-theme="dark"] {
+    /* Dark Theme */
+    --color-primary: #4589FF;
+    --color-primary-dark: #0F62FE;
+    --color-primary-light: #6EA6FF;
+    --color-primary-hover: #2E7AFF;
+    
+    --color-secondary: #08BDBA;
+    --color-secondary-dark: #005D5D;
+    --color-secondary-light: #20D5D2;
+    
+    --color-accent: #FF7EB6;
+    --color-accent-dark: #FF50A0;
+    --color-accent-light: #FFA6C9;
+    
+    --color-background: #161616;
+    --color-surface: #262626;
+    --color-border: #393939;
+    
+    --color-text-primary: #F4F4F4;
+    --color-text-secondary: #C6C6C6;
+    --color-text-disabled: #8D8D8D;
+    
+    --color-success: #42BE65;
+    --color-warning: #FDD13A;
+    --color-error: #FA4D56;
+    --color-info: #6EA6FF;
+  }
+  
+  /* Base styles for professional B2B dashboard */
+  body {
+    @apply bg-gray-10 text-gray-90 font-sans antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  
+  /* Enhanced focus states for accessibility */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-gray-10;
+  }
+  
+  /* Smooth transitions for professional feel */
+  * {
+    @apply transition-colors duration-200;
+  }
+}
+
+/* IBM Carbon Design System - Component Utilities */
+@layer components {
+  /* Button Styles */
+  .btn-primary {
+    @apply bg-primary text-white px-4 py-2 rounded-lg font-medium;
+    @apply hover:bg-primary-hover transition-colors shadow-sm;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-white px-4 py-2 rounded-lg font-medium;
+    @apply hover:bg-secondary-dark transition-colors shadow-sm;
+    @apply focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2;
+  }
+  
+  .btn-outline {
+    @apply border border-gray-30 text-gray-90 px-4 py-2 rounded-lg font-medium;
+    @apply hover:bg-gray-10 transition-colors;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2;
+  }
+  
+  .btn-danger {
+    @apply bg-error text-white px-4 py-2 rounded-lg font-medium;
+    @apply hover:bg-error-dark transition-colors shadow-sm;
+    @apply focus:outline-none focus:ring-2 focus:ring-error focus:ring-offset-2;
+  }
+  
+  /* Form Input Styles */
+  .input-field {
+    @apply w-full px-4 py-2 border border-gray-30 rounded-lg;
+    @apply bg-surface text-gray-90 placeholder-gray-50;
+    @apply focus:ring-2 focus:ring-primary focus:border-primary transition-colors outline-none;
+  }
+  
+  .input-field:disabled {
+    @apply bg-gray-20 text-gray-50 cursor-not-allowed;
+  }
+  
+  /* Card Styles */
+  .card {
+    @apply bg-surface rounded-lg shadow-sm border border-gray-30;
+  }
+  
+  .card-header {
+    @apply px-6 py-4 border-b border-gray-30;
+  }
+  
+  .card-body {
+    @apply px-6 py-4;
+  }
+  
+  /* Status Badges */
+  .badge-success {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+    @apply bg-success/10 text-success;
+  }
+  
+  .badge-warning {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+    @apply bg-warning/10 text-warning-dark;
+  }
+  
+  .badge-error {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+    @apply bg-error/10 text-error;
+  }
+  
+  .badge-info {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+    @apply bg-info/10 text-info-dark;
+  }
+  
+  /* Travel-inspired accent highlights */
+  .accent-highlight {
+    @apply relative;
+  }
+  
+  .accent-highlight::before {
+    content: '';
+    @apply absolute left-0 top-0 bottom-0 w-1 bg-accent rounded-l;
+  }
+}
+
+/* Import RTL styles */
+@import './styles/rtl.css';
+
+/* RTL Support */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .space-x-reverse > * + * {
+  margin-right: 0.5rem;
+  margin-left: 0;
+}
+
+[dir="rtl"] .space-x-2 > * + * {
+  margin-right: 0.5rem;
+  margin-left: 0;
+}
+
+[dir="rtl"] .space-x-3 > * + * {
+  margin-right: 0.75rem;
+  margin-left: 0;
+}
+
+[dir="rtl"] .space-x-6 > * + * {
+  margin-right: 1.5rem;
+  margin-left: 0;
+}
+
+[dir="rtl"] .space-x-8 > * + * {
+  margin-right: 2rem;
+  margin-left: 0;
+}
+
+/* Arabic font support */
+[dir="rtl"] {
+  font-family: 'Noto Sans Arabic', 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
+}
+
+[dir="rtl"] .font-serif {
+  font-family: 'Times New Roman', serif;
+}
+
+/* Custom Arabic font class */
+.font-arabic {
+  font-family: 'Noto Sans Arabic', 'Segoe UI', 'Tahoma', 'Arial', sans-serif;
+  direction: rtl;
+  unicode-bidi: embed;
+}
+
+/* RTL specific positioning */
+[dir="rtl"] .text-left {
+  text-align: right;
+}
+
+[dir="rtl"] .text-right {
+  text-align: left;
+}
+
+/* RTL flexbox adjustments */
+[dir="rtl"] .flex-row {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .flex-row-reverse {
+  flex-direction: row;
+}
+
+/* RTL positioning adjustments */
+[dir="rtl"] .left-0 {
+  left: auto;
+  right: 0;
+}
+
+[dir="rtl"] .right-0 {
+  right: auto;
+  left: 0;
+}
+
+[dir="rtl"] .left-2 {
+  left: auto;
+  right: 0.5rem;
+}
+
+[dir="rtl"] .right-2 {
+  right: auto;
+  left: 0.5rem;
+}
+
+[dir="rtl"] .left-3 {
+  left: auto;
+  right: 0.75rem;
+}
+
+[dir="rtl"] .right-3 {
+  right: auto;
+  left: 0.75rem;
+}
+
+[dir="rtl"] .left-4 {
+  left: auto;
+  right: 1rem;
+}
+
+[dir="rtl"] .right-4 {
+  right: auto;
+  left: 1rem;
+}
+
+/* RTL margin adjustments */
+[dir="rtl"] .mr-1 {
+  margin-right: 0;
+  margin-left: 0.25rem;
+}
+
+[dir="rtl"] .ml-1 {
+  margin-left: 0;
+  margin-right: 0.25rem;
+}
+
+[dir="rtl"] .mr-2 {
+  margin-right: 0;
+  margin-left: 0.5rem;
+}
+
+[dir="rtl"] .ml-2 {
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
+
+/* RTL padding adjustments */
+[dir="rtl"] .pr-2 {
+  padding-right: 0;
+  padding-left: 0.5rem;
+}
+
+[dir="rtl"] .pl-2 {
+  padding-left: 0;
+  padding-right: 0.5rem;
+}
+
+[dir="rtl"] .pr-3 {
+  padding-right: 0;
+  padding-left: 0.75rem;
+}
+
+[dir="rtl"] .pl-3 {
+  padding-left: 0;
+  padding-right: 0.75rem;
+}
+
+[dir="rtl"] .pr-4 {
+  padding-right: 0;
+  padding-left: 1rem;
+}
+
+[dir="rtl"] .pl-4 {
+  padding-left: 0;
+  padding-right: 1rem;
+}
+
+/* RTL border adjustments */
+[dir="rtl"] .border-l-4 {
+  border-left-width: 0;
+  border-right-width: 4px;
+}
+
+[dir="rtl"] .border-r-4 {
+  border-right-width: 0;
+  border-left-width: 4px;
+}
+
+/* RTL transform adjustments for specific elements only */
+[dir="rtl"] .rtl-flip {
+  transform: scaleX(-1);
+}
+
+/* RTL-safe transform utilities */
+[dir="rtl"] .rtl-safe-transform {
+  /* Allow transforms without automatic flipping */
+}
+
+/* Specific RTL transforms for icons and directional elements */
+[dir="rtl"] .chevron-right,
+[dir="rtl"] .arrow-right,
+[dir="rtl"] .icon-directional {
+  transform: scaleX(-1);
+}
+
+/* Arabic number support */
+[dir="rtl"] .ltr-numbers {
+  direction: ltr;
+  unicode-bidi: embed;
+}
+
+/* Custom animations for About Us section */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Smooth scrolling enhancement */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced backdrop blur for cards */
+.backdrop-blur-enhanced {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Custom parallax container */
+.parallax-container {
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Smooth transitions for all motion elements */
+.motion-element {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+} 
